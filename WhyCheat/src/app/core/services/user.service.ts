@@ -10,4 +10,8 @@ export class UserService {
   onSignup(obj:any){
   return this.http.post("http://localhost:3000/api/users/createUser",obj);
   }
+
+  onLogin(obj: any) {
+    return this.http.post('http://localhost:3000/api/users/loginUser', obj);
+  }
 }

@@ -4,9 +4,9 @@
         <p>Please enter your details to continue.</p>
 
         <form action="">
-            <input placeholder="Enter Email" />
-            <input placeholder="Enter Password" />
-            <button>Login</button>
+            <input placeholder="Enter Email" [(ngModel)]="loginData.email" name="email" />
+            <input placeholder="Enter Password" [(ngModel)]="loginData.password" name="password"/>
+            <button (click)="onSubmit()">Login</button>
         </form>
     </div>
     <div class="right_box">
