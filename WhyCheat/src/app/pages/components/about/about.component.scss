@@ -1,0 +1,33 @@
+.card_section{
+    padding: 2rem 5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom:  7rem;
+    
+
+    div{
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        box-shadow: 0 4px 6px #0000001a;
+        background: #fff;
+        border: 1px solid #eaeaea;
+        border-radius: 15px;
+        gap: 1rem;
+
+        p{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        img{
+            width: 65px;
+            height: 70px;
+        }
+
+    }
+}

@@ -1,0 +1,29 @@
+.footer_container{
+    padding: 50px 40px;
+    background-color: black;
+    color: azure;
+    .inner_container{
+        display: flex;
+        justify-content: space-between;
+        .heading{
+            h2{
+                color: aliceblue;
+                font-size: 30px;
+            }
+        }
+        .links{
+            display: flex;
+            gap: 2rem;
+            ul{
+                list-style: none;
+                li{
+                    a{
+                        color: aliceblue;
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
