@@ -1,11 +1,15 @@
 import { Component,inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { NavBarComponent } from "./shared/reusable/nav-bar/nav-bar.component";
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,FormsModule],
+  imports: [RouterOutlet, FormsModule, NavBarComponent,NzDropDownModule, NzMenuModule,NzIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

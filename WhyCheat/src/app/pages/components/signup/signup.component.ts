@@ -29,7 +29,7 @@ onSubmit(){
   this.userservice.onSignup(this.userData).subscribe((res:any)=>{
     console.log(res)
     if (res) {
-      localStorage.setItem('user', JSON.stringify(res.createUser));
+      localStorage.setItem('user', JSON.stringify(res));
       console.log('User data saved in localStorage:', res.user);
       this.router.navigate(['login']);
     } else {
