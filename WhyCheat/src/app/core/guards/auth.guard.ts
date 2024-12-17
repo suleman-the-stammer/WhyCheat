@@ -1,12 +1,17 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { Inject } from '@angular/core';
+import {  inject } from '@angular/core';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  if (localStorage.getItem('email')) {
-    return true;
-  } else {
-    const router = Inject(Router);
-    router.navigate(['login']);
-    return false;
+  const router = inject(Router);
+  try {
+    const token = localStorage.getItem('token');
+    if (token) {
+      return true;
+    }
+  } catch (error) {
+    console.error('localStorage is not available:', error);
   }
+
+  router.navigate(['/login']);
+  return false;
 };

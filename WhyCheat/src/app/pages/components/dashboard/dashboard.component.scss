@@ -1,0 +1,49 @@
+.dashboard_container {
+    display: flex;
+    height: 100vh;
+  
+    .side_bar {
+      width: 250px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+  
+      h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 15px;
+  
+          a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+  
+            &.active {
+              font-weight: bold;
+              color: #b5d501; 
+            }
+  
+            &:hover {
+              color: #010203;
+            }
+          }
+        }
+      }
+    }
+    
+    .main_content {
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+    }
+  }
+  
+ 

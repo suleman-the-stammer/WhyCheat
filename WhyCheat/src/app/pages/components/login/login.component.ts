@@ -29,8 +29,8 @@ export class LoginComponent {
         console.log('Login Response:', res);
 
         if (res) {
-          localStorage.setItem('user', JSON.stringify(res.email));
-          console.log('User logged in and data saved:', res.email);
+          localStorage.setItem('token',res?.Token);
+          console.log('User logged in and data saved:', res);
           this.router.navigate(['home']); 
         } else {
           console.error('Login failed:', res.message);

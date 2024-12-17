@@ -1,6 +1,6 @@
 import { Component,inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { NavBarComponent } from "./shared/reusable/nav-bar/nav-bar.component";
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -16,4 +16,12 @@ import { FooterComponent } from "./shared/reusable/footer/footer.component";
 })
 export class AppComponent {
   title = 'WhyCheat';
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        console.log('Navigation complete');
+      }
+    });
+  }
 }

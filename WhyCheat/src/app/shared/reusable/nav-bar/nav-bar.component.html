@@ -1,4 +1,4 @@
-<div class="nav_conatiner">
+<div *ngIf="showNavbar" class="nav_conatiner">
     <div class="nav_routes">
 <ul>
     <li>
@@ -21,7 +21,7 @@
           </a>
           <nz-dropdown-menu #menu="nzDropdownMenu">
             <ul nz-menu nzSelectable>
-              <li nz-menu-item>My Account</li>
+              <li nz-menu-item><a routerLink="/dashboard">My Account</a></li>
               <li nz-menu-item>Logout</li>
              
             </ul>

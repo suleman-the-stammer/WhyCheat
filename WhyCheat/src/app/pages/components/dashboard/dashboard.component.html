@@ -1,0 +1,23 @@
+<div class="dashboard_container">
+
+    <div class="side_bar">
+      <h3>why<span style="color: rgb(232, 232, 0);">Cheat</span></h3>
+      <ul>
+        <li>
+          <a routerLink="profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
+        </li>
+        <li>
+          <a routerLink="stats" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="quizupload" routerLinkActive="active">Quiz</a>
+        </li>
+      </ul>
+    </div>
+  
+    
+    <div class="main_content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
