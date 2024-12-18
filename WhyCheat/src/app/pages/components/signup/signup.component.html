@@ -1,18 +1,40 @@
-
 <div class="signup_container">
     <div class="left_box">
         <h1>Create an account</h1>
         <p>Please enter your details to continue.</p>
 
         <form action="">
-            <input placeholder="Enter Name" [(ngModel)]="userData.userName" name="userName" />
-            <input placeholder="Enter Email" [(ngModel)]="userData.email"name="email"/>
-            <input placeholder="Enter Password" [(ngModel)]="userData.password" name="password"/>
-            <select  name="" id="">
-                <option value="1">
+            <input placeholder="Enter Name" [(ngModel)]="userData.userName" name="userName" 
+            required 
+            minlength="3" 
+            #userName="ngModel" />
+            <div *ngIf="userName.invalid && userName.touched" class="error">
+                <p *ngIf="userName.errors?.['required']">Name is required.</p>
+                <p *ngIf="userName.errors?.['minlength']">Name must be at least 3 characters long.</p>
+              </div>
+            <input placeholder="Enter Email" [(ngModel)]="userData.email" name="email" required 
+            email 
+            #email="ngModel" />
+            <div *ngIf="email.invalid && email.touched" class="error">
+                <p *ngIf="email.errors?.['required']">Email is required.</p>
+                <p *ngIf="email.errors?.['email']">Please enter a valid email address.</p>
+              </div>
+            <input placeholder="Enter Password" [(ngModel)]="userData.password"  name="password" 
+            required 
+            minlength="6" 
+            #password="ngModel" />
+            <div *ngIf="password.invalid && password.touched" class="error">
+                <p *ngIf="password.errors?.['required']">Password is required.</p>
+                <p *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</p>
+              </div>
+            <select name="" id="" [(ngModel)]="userData.role" name="role">
+                <option value="" disabled selected>
+                    Select Role
+                </option>
+                <option value="1" value="Student">
                     Student
                 </option>
-                <option value="2">
+                <option value="2" value="Teacher">
                     Teacher
                 </option>
             </select>

@@ -1,9 +1,9 @@
 <div class="profile_container">
     <h1>Profile</h1>
     <form action="">
-        <input type="text" placeholder="user name">
-        <input type="text" placeholder="user email">
+        <input type="text" placeholder="user name" [(ngModel)]="userData.userName" name="userName">
+        <input type="text" placeholder="user email" [(ngModel)]="userData.email" name="email">
         <input type="text" placeholder="user password">
-        <button>Update</button>
+        <button (click)="onUpdate()">Update</button>
     </form>
 </div>

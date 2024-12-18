@@ -3,8 +3,10 @@
         display: flex;
         gap: 1rem;
         justify-content: center;
-
-        div {
+.flex{
+    display: flex;
+    gap: 1rem;
+       .card {
             width: 300px;
             height: 250px;
             display: flex;
@@ -17,6 +19,8 @@
             border-radius: 15px;
             justify-content: center;
         }
+    }
+   
     }
     .list{
         margin-top: 3rem;

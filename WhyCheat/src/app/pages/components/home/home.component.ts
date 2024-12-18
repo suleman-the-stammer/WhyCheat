@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { HeroSectionComponent } from "../../../shared/reusable/hero-section/hero-section.component";
+import { CardComponent } from "../../../shared/reusable/card/card.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroSectionComponent],
+  imports: [HeroSectionComponent, CardComponent,CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

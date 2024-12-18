@@ -1,10 +1,25 @@
-
-<h1 style="color: rgb(141, 4, 204);">upload Quiz</h1>
+<h1 style="color: rgb(141, 4, 204);text-align: center;">UPLOAD QUIZ</h1>
 <form action="">
-    <input type="text" placeholder="Enter Quiz Title">
+    <input type="text" placeholder="Enter Quiz Title" [(ngModel)]="quizData.title" name="title">
     <select name="" id="">
         <option value="0">Select Quiz Type</option>
         <option value="1">Cyber Security</option>
     </select>
-    
+
 </form>
+<div>
+    <button mat-raised-button color="primary" (click)="openDialog()">Open Popup</button>
+    <button (click)="onSave()">Save</button>
+</div>
+
+<div *ngIf="questions.length === 0">
+    <p>No questions available yet.</p>
+</div>
+<div *ngIf="questions.length > 0">
+    <div class="mcq" *ngFor="let question of questions; let i = index">
+        <h2> {{i + 1}} : {{question.title}}</h2>
+        <ul>
+            <li *ngFor="let option of question?.options; let i = index">{{ option }}</li>
+        </ul>
+    </div>
+</div>

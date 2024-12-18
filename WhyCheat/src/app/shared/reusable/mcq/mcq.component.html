@@ -1,0 +1,14 @@
+<div class="mcq_container" *ngFor="let quiz of QuizData; let i = index">
+
+  <h1 style="text-align: center;">{{quiz.title}}</h1>
+  <div class="mcq" *ngFor="let question of quiz.questions; let i = index">
+    <h2>{{i+1}}: {{question.title}}</h2>
+    <ul>
+      <li *ngFor="let option of question.options; let i = index"><input type="radio">{{option}}</li>
+      <!-- <li><input type="radio">option 1</li>
+      <li><input type="radio">option 1</li>
+      <li><input type="radio">option 1</li> -->
+    </ul>
+  </div>
+
+</div>

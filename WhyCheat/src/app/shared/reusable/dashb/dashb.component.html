@@ -1,10 +1,19 @@
 <div class="dash_container">
     <h1>Dashboard</h1>
     <div class="cards">
-        <div><h3>Total Student</h3> <p>35</p></div>
-        <div><h3>Total Quiz</h3> <p>35</p></div>
-        <div><h3>Total Teacher</h3> <p>35</p></div>
-    </div>
+       
+        <div *ngIf="role === 'Teacher'" class="flex">
+          <div class="card"><h3>Total Students</h3> <p>{{StudentCount}}</p></div>
+          <div class="card"><h3>Total Quizzes</h3> <p>{{Counter}}</p></div>
+          <div class="card"><h3>Total Teachers</h3> <p>Details</p></div>
+        </div>
+    
+        <div *ngIf="role === 'Student'" class="flex">
+          <div class="card"><h3>Total Teachers</h3> <p>{{TeacherCount}}</p></div>
+          <div class="card"><h3>Total Quizzes Uploaded</h3> <p>{{Counter}}</p></div>
+          <div class="card"><h3>Total Marks</h3> <p>Details</p></div>
+        </div>
+      </div>
     <div class="list">
         <table style="width: 75%;" >
             <thead>
@@ -17,10 +26,10 @@
             </thead>
             <tbody>
               
-                    <tr class="table">
-                        <td>1</td>
-                        <td style="padding-left: 29px;">hamza</td>
-                        <td>hamzalatif.com</td>
+                    <tr class="table" *ngFor="let list of List; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td style="padding-left: 29px;">{{ list.userName}}</td>
+                        <td>{{ list.email}}</td>
                        
                     </tr>
                 

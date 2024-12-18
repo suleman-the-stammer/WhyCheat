@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/components/login/login.component';
 import { SignupComponent } from './pages/components/signup/signup.component';
 import { HomeComponent } from './pages/components/home/home.component';
@@ -12,65 +12,75 @@ import { DashbComponent } from './shared/reusable/dashb/dashb.component';
 import { QuizuploadComponent } from './shared/reusable/quizupload/quizupload.component';
 import { QuizformComponent } from './shared/reusable/quizform/quizform.component';
 import { QuizListComponent } from './shared/reusable/quiz-list/quiz-list.component';
+import { McqComponent } from './shared/reusable/mcq/mcq.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {
-        path:'',
-        redirectTo:'login',
-        pathMatch:'full'
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path:'login',
-        component:LoginComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'signup',
-        component:SignupComponent
+        path: 'signup',
+        component: SignupComponent
     },
     {
-        path:'home',
-        component:HomeComponent,
-        canActivate: [authGuard], 
-       
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [authGuard],
+
     },
     {
-        path:'quiz',
-        component:QuizComponent,
-        canActivate: [authGuard], 
-       
+        path: 'quiz',
+        component: QuizComponent,
+        canActivate: [authGuard],
+
+
     },
     {
-        path:'about',
-        component:AboutComponent,
-        canActivate: [authGuard], 
-       
+        path: 'mcq',
+        component: McqComponent,
+        canActivate: [authGuard],
+
+
     },
     {
-        path:'contact',
-        component:ContactComponent,
-        canActivate: [authGuard], 
-       
+        path: 'about',
+        component: AboutComponent,
+        canActivate: [authGuard],
+
+    },
+    {
+        path: 'contact',
+        component: ContactComponent,
+        canActivate: [authGuard],
+
     },
     {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate: [authGuard], 
+        canActivate: [authGuard],
         children: [
-          { path: '', redirectTo: 'profile', pathMatch: 'full' }, 
-          { path: 'profile', component: ProfileComponent },
-          { path: 'stats', component: DashbComponent },
-          {
-            path: 'quizupload', 
-            component: QuizuploadComponent, 
-            children: [
-                { path: '', component: QuizListComponent }, // Default to show the quiz list
-                { path: 'uploadquizform', component: QuizformComponent } // Show the form when Add Quiz is clicked
-            ]
-        }
+            { path: '', redirectTo: 'profile', pathMatch: 'full' },
+            { path: 'profile', component: ProfileComponent },
+            { path: 'stats', component: DashbComponent },
+            {
+                path: 'quizupload',
+                component: QuizuploadComponent,
+                children: [
+                    { path: '', component: QuizListComponent }, // Default to show the quiz list
+                    { path: 'uploadquizform', component: QuizformComponent } // Show the form when Add Quiz is clicked
+                ]
+            }
         ],
-      },
-      { 
-        path: '**', 
-        redirectTo: 'login' 
+    },
+    {
+        path: '**',
+        redirectTo: 'login'
     }
 ];

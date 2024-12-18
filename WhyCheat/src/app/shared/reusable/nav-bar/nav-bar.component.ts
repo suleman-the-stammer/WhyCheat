@@ -27,5 +27,9 @@ export class NavBarComponent {
       }
     });
   }
+  onLogout(){
+    localStorage.removeItem('token')
+    this.router.navigateByUrl('/login')
+  }
 
 }

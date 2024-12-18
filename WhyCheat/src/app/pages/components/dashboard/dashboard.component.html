@@ -9,7 +9,7 @@
         <li>
           <a routerLink="stats" routerLinkActive="active">Dashboard</a>
         </li>
-        <li>
+        <li *ngIf="role === 'Teacher'">
           <a routerLink="quizupload" routerLinkActive="active">Quiz</a>
         </li>
       </ul>

@@ -4,8 +4,20 @@
         <p>Please enter your details to continue.</p>
 
         <form action="">
-            <input placeholder="Enter Email" [(ngModel)]="loginData.email" name="email" />
-            <input placeholder="Enter Password" [(ngModel)]="loginData.password" name="password"/>
+            <input placeholder="Enter Email" [(ngModel)]="loginData.email" name="email"  required 
+            email 
+            #email="ngModel"/>
+            <div *ngIf="email.invalid && email.touched" class="error">
+                <p *ngIf="email.errors?.['required']">Email is required.</p>
+                <p *ngIf="email.errors?.['email']">Please enter a valid email address.</p>
+              </div>
+            <input placeholder="Enter Password" [(ngModel)]="loginData.password" name="password"  required 
+            minlength="6" 
+            #password="ngModel"/>
+            <div *ngIf="password.invalid && password.touched" class="error">
+                <p *ngIf="password.errors?.['required']">Password is required.</p>
+                <p *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</p>
+              </div>
             <button (click)="onSubmit()">Login</button>
         </form>
     </div>

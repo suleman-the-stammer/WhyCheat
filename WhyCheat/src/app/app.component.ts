@@ -6,17 +6,18 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FooterComponent } from "./shared/reusable/footer/footer.component";
-
+import { NgToastModule } from 'ng-angular-popup';
+import { ToasterPosition } from './core/enums/toaster-position';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NavBarComponent, NzDropDownModule, NzMenuModule, NzIconModule, FooterComponent],
+  imports: [NgToastModule,RouterOutlet, FormsModule, NavBarComponent, NzDropDownModule, NzMenuModule, NzIconModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'WhyCheat';
-
+  ToasterPosition = ToasterPosition;
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

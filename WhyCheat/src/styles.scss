@@ -1,16 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap");
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "DM Sans", sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-p,h1,h2,h3,h4{
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
     letter-spacing: 0.5px;
-    
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.908) !important;
+    color: rgb(232, 232, 0) !important;
 }

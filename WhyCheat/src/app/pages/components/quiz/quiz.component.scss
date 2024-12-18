@@ -1,0 +1,33 @@
+.quiz_container {
+    padding: 20px;
+    margin: 4rem 0rem;
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+            select {
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 4px;
+                margin-left: 5px;
+
+            }
+
+            span {
+                font-size: 17px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .line {
+        border: 1px solid rgba(0, 0, 0, 0.273);
+        margin: 1rem 0rem;
+        width: 100%;
+    }
+
+   
+}

@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>MCQs</h1>
+    
+    <div class="input_style">
+      <label for="">Mcq Title</label>
+      <input type="text" [(ngModel)]="mcq.title">
+    </div>
+  
+    <div class="options">
+      <div>
+        <div><label for="">Option 1:</label><input type="text" [(ngModel)]="mcq.options[0]"></div>
+        <div><label for="">Option 2:</label><input type="text" [(ngModel)]="mcq.options[1]"></div>
+      </div>
+      <div>
+        <div><label for="">Option 3:</label><input type="text" [(ngModel)]="mcq.options[2]"></div>
+        <div><label for="">Option 4:</label><input type="text" [(ngModel)]="mcq.options[3]"></div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="">Answer</label>
+      <input type="text" [(ngModel)]="mcq.answer">
+    </div>
+  
+    <button (click)="onSubmit()">Upload</button>
+  </div>
+  

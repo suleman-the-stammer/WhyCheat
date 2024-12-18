@@ -1,5 +1,12 @@
-<app-hero-section
-  [backgroundImage]="heroImage"
-  [title]="heroTitle"
-  [subtitle]="heroSubtitle"
-></app-hero-section>
+<app-hero-section [backgroundImage]="heroImage" [title]="heroTitle" [subtitle]="heroSubtitle"></app-hero-section>
+<div class="quiz_container">
+  <div class="heading">
+    <h1>Quiz</h1>
+    <div><span>Select Type:</span><select name="" id="">
+        <option value="0">Cyber Security</option>
+      </select></div>
+  </div>
+  <div class="line"></div>
+
+  <app-card [data]="QuizData"></app-card>
+</div>

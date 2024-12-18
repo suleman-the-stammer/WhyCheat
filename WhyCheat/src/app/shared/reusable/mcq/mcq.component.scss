@@ -1,0 +1,19 @@
+.mcq_container{
+height: 100%;
+padding: 7rem 4rem;
+.mcq {
+    ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+
+}
+
+}
