@@ -7,7 +7,9 @@ const validateUser = require('../Middleware/auth')
 router.post('/createUser', user.CreateUser)
 router.post('/loginUser', user.LoginUser)
 
-router.post('/updateUser', validateUser, user.LoginUser)
+router.get('/profileDetails', validateUser, user.ProfileDetails)
+router.put('/updateUser', validateUser, user.UpdateUser)
+router.get('/studentList', validateUser, user.StudentList)
 
 
 module.exports = router

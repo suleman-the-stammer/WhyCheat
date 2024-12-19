@@ -45,10 +45,69 @@ exports.LoginUser = async (req, res) => {
         res.status(200).json({
             status: "success",
             message: "Successfully logged in",
-            Token
+            Token,
+            
         });
     } catch (err) {
         console.log(err);
         res.status(404).json(err);
     }
 };
+
+exports.ProfileDetails = async (req, res) => {
+    try {
+        var UserData = req.UserData;
+
+        let { password, ...other } = UserData // Distructing operator
+
+        res.status(200).json({
+            status: "success",
+            message: "Authenticated",
+            UserData: other
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(404).json(err);
+    }
+};
+
+
+exports.UpdateUser = async (req, res) => {
+    try {
+        let UserData = req.UserData;
+        console.log(UserData)
+        let Payload = req.body;
+        let UpdateUser = await User.findByIdAndUpdate(UserData?._id, { "$set": Payload })
+        console.log(UpdateUser)
+        res.status(200).json({
+            status: "success",
+            message: "Profile Updated Successfully",
+        });
+
+
+    } catch (err) {
+        res.status(404).json(err)
+    }
+
+}
+
+exports.StudentList = async (req, res) => {
+    try {
+      
+        let StudentList = await User.find({ role: "Student" })
+
+        res.status(200).json({
+            status: "success",
+            message: "Operation Successful",
+            result: StudentList
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(404).json(err);
+    }
+
+
+
+
+
+}
