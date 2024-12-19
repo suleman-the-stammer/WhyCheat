@@ -20,11 +20,19 @@ export class LoginComponent {
     password: ''
   };
 
+  isSubmitted: boolean = false;
+
   private router = inject(Router);
 
   constructor(private userService: UserService,private toast:NgToastService) {}
 
-  onSubmit() {
+  onSubmit(loginForm: any) {
+    this.isSubmitted = true;
+
+    if (loginForm.invalid) {
+      this.toast.warning('Invalidation Error', 'Please fill all fields correctly', 3000);
+      return;
+    }
     this.userService.onLogin(this.loginData).subscribe(
       (res: any) => {
         console.log('Login Response:', res);

@@ -11,9 +11,9 @@ import { QuizService } from '../../../core/services/quiz.service';
   styleUrl: './quiz.component.scss'
 })
 export class QuizComponent {
-  heroImage = 'signup-side-img.jpg';
-  heroTitle = 'Welcome to the Quiz Page';
-  heroSubtitle = 'Discover amazing content!';
+  heroImage = 'online-exam-internet-distance-school-test-banner-landing-page-clock-computer-screen-web-quiz-check-list-boxes-questionnaire-application-digital-education-online-exam-blue-background-vector.jpg';
+  heroTitle = '';
+  heroSubtitle = '';
 
   QuizData: any = []
 

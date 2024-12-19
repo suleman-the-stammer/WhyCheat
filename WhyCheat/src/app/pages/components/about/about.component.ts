@@ -10,8 +10,8 @@ import { HeroSectionComponent } from "../../../shared/reusable/hero-section/hero
 })
 export class AboutComponent {
   heroImage = 'signup-side-img.jpg';
-  heroTitle = 'Welcome to the About';
-  heroSubtitle = 'Discover amazing content!';
+  heroTitle = '';
+  heroSubtitle = '';
 
   img1:string='evaluation-exam-svgrepo-com.svg'
   img2:string='statistics-youtube-svgrepo-com.svg'

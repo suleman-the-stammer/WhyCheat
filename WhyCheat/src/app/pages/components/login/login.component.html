@@ -3,7 +3,7 @@
         <h1>Welcome to WhyCheat</h1>
         <p>Please enter your details to continue.</p>
 
-        <form action="">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <input placeholder="Enter Email" [(ngModel)]="loginData.email" name="email"  required 
             email 
             #email="ngModel"/>
@@ -18,7 +18,7 @@
                 <p *ngIf="password.errors?.['required']">Password is required.</p>
                 <p *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</p>
               </div>
-            <button (click)="onSubmit()">Login</button>
+            <button (click)="onSubmit(loginForm)" type="submit">Login</button>
         </form>
     </div>
     <div class="right_box">

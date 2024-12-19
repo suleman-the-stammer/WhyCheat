@@ -6,14 +6,14 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroSectionComponent, CardComponent,CommonModule],
+  imports: [HeroSectionComponent,CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  heroImage = 'signup-side-img.jpg';
-  heroTitle = 'Welcome to the Home Page';
-  heroSubtitle = 'Discover amazing content!';
+  heroImage = 'Untitled-1.jpg';
+  heroTitle = 'Welcome to the WhyCheat';
+  heroSubtitle = 'Where Learning Meets Innovation';
 
   img1:string='evaluation-exam-svgrepo-com.svg'
   img2:string='statistics-youtube-svgrepo-com.svg'

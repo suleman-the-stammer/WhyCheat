@@ -3,7 +3,7 @@
         <h1>Create an account</h1>
         <p>Please enter your details to continue.</p>
 
-        <form action="">
+        <form  #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
             <input placeholder="Enter Name" [(ngModel)]="userData.userName" name="userName" 
             required 
             minlength="3" 
@@ -38,7 +38,7 @@
                     Teacher
                 </option>
             </select>
-            <button (click)="onSubmit()">sign up</button>
+            <button (click)="onSubmit(signupForm)" type="submit">sign up</button>
         </form>
     </div>
     <div class="right_box">

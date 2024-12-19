@@ -18,11 +18,5 @@ import { ToasterPosition } from './core/enums/toaster-position';
 export class AppComponent {
   title = 'WhyCheat';
   ToasterPosition = ToasterPosition;
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        console.log('Navigation complete');
-      }
-    });
-  }
+
 }

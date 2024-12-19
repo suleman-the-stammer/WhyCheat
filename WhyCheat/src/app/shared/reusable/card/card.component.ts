@@ -20,4 +20,7 @@ export class CardComponent {
     // this.router.navigateByUrl('/mcq', { state: { quiz } });
     this.router.navigateByUrl('/mcq');
   }
+  ngOnInit(){
+    console.log(this.data)
+  }
 }

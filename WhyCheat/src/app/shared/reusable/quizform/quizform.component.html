@@ -7,7 +7,7 @@
     </select>
 
 </form>
-<div>
+<div class="btn">
     <button mat-raised-button color="primary" (click)="openDialog()">Open Popup</button>
     <button (click)="onSave()">Save</button>
 </div>
@@ -15,7 +15,7 @@
 <div *ngIf="questions.length === 0">
     <p>No questions available yet.</p>
 </div>
-<div *ngIf="questions.length > 0">
+<div *ngIf="questions.length > 0" >
     <div class="mcq" *ngFor="let question of questions; let i = index">
         <h2> {{i + 1}} : {{question.title}}</h2>
         <ul>

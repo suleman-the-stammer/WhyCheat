@@ -27,9 +27,14 @@ userData:any={
 
 constructor(private userservice: UserService,private toast:NgToastService) {}
 private router = inject(Router);
-onSubmit(){
+isSubmitted: boolean = false;
+onSubmit(signupForm:any){
+  this.isSubmitted = true;
 console.log(this.userData.role)
-
+if (signupForm.invalid) {
+  this.toast.warning('Invalidation Error', 'Please fill all fields correctly', 3000);
+  return;
+}
   this.userservice.onSignup(this.userData).subscribe((res:any)=>{
     console.log(res)
     if (res) {

@@ -10,9 +10,9 @@
         </thead>
         <tbody>
           
-                <tr class="table">
-                    <td>1</td>
-                    <td style="padding-left: 29px;">cyber Security</td>
+                <tr class="table" *ngFor="let list of quizData; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td style="padding-left: 29px;">{{list.title}}</td>
                     <td>Hamza</td>
                    
                 </tr>

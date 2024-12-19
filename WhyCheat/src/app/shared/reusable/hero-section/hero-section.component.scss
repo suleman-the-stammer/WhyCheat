@@ -6,7 +6,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    top: 10%;
     color: rgb(255, 255, 255);
+    margin-bottom: 2rem;
   
     .hero-overlay {
       padding: 20px;
@@ -22,6 +24,7 @@
     p {
       font-size: 18px;
       margin-top: 10px;
+      color: black;
     }
   }
   
