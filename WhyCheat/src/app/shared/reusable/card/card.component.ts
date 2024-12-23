@@ -9,18 +9,21 @@ import { Router } from '@angular/router';
   imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  
+
 })
 
 export class CardComponent {
   private router = inject(Router)
   @Input() data: any[] = [];
 
+
   onClick(quiz: any) {
-    // this.router.navigateByUrl('/mcq', { state: { quiz } });
-    this.router.navigateByUrl('/mcq');
+    console.log('Navigating with quiz:', quiz);
+    this.router.navigateByUrl('/mcq', { state: { quizData: quiz } });
+    // this.router.navigateByUrl('/mcq');
   }
-  ngOnInit(){
+  
+  ngOnInit() {
     console.log(this.data)
   }
 }
