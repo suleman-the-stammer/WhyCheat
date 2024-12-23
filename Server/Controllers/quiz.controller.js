@@ -26,13 +26,13 @@ exports.CreateQuiz = async (req, res) => {
 
 exports.GetAllQuizzes = async (req, res) => {
     try {
-        const result = await QuizModel.find();
-    //    const autherName=QuizModel.find().populate("auther")
+        const result = await QuizModel.find().populate("auther")
+
+         
 
         res.status(200).json({
             message: "Operation Successful",
             result,
-            
         });
     } catch (err) {
         console.log(err);
